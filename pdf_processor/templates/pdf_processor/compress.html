@@ -1,0 +1,46 @@
+{% extends 'pdf_processor/base.html' %}
+
+{% block title %}Compress PDF{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-compress-arrows-alt me-2"></i>Compress PDF
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="pdf" class="form-label">Select PDF File</label>
+                        <input type="file" class="form-control" id="pdf" name="pdf" accept=".pdf" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="quality" class="form-label">Compression Quality</label>
+                        <input type="range" class="form-range" id="quality" name="quality" min="1" max="100" value="75">
+                        <div class="d-flex justify-content-between">
+                            <span>Lower Quality</span>
+                            <span id="quality-value">75%</span>
+                            <span>Higher Quality</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-compress-arrows-alt me-2"></i>Compress PDF
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('quality').addEventListener('input', function(e) {
+    document.getElementById('quality-value').textContent = this.value + '%';
+});
+</script>
+{% endblock %}

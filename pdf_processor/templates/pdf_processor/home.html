@@ -1,0 +1,78 @@
+{% extends 'pdf_processor/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4">Welcome to PDF Tools</h1>
+    <p class="lead">Your all-in-one solution for PDF processing</p>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="fas fa-object-group feature-icon text-primary"></i>
+                <h5 class="card-title">Merge PDFs</h5>
+                <p class="card-text">Combine multiple PDF files into a single document.</p>
+                <a href="{% url 'pdf_processor:merge_pdfs' %}" class="btn btn-primary">Merge Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="fas fa-cut feature-icon text-primary"></i>
+                <h5 class="card-title">Split PDF</h5>
+                <p class="card-text">Extract specific pages from your PDF document.</p>
+                <a href="{% url 'pdf_processor:split_pdf' %}" class="btn btn-primary">Split Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="fas fa-compress-arrows-alt feature-icon text-primary"></i>
+                <h5 class="card-title">Compress PDF</h5>
+                <p class="card-text">Reduce PDF file size while maintaining quality.</p>
+                <a href="{% url 'pdf_processor:compress_pdf' %}" class="btn btn-primary">Compress Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="fas fa-font feature-icon text-primary"></i>
+                <h5 class="card-title">Extract Text</h5>
+                <p class="card-text">Extract text content from your PDF files.</p>
+                <a href="{% url 'pdf_processor:extract_text' %}" class="btn btn-primary">Extract Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="fas fa-images feature-icon text-primary"></i>
+                <h5 class="card-title">Extract Images</h5>
+                <p class="card-text">Extract all images from your PDF document.</p>
+                <a href="{% url 'pdf_processor:extract_images' %}" class="btn btn-primary">Extract Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="fas fa-lock feature-icon text-primary"></i>
+                <h5 class="card-title">Protect PDF</h5>
+                <p class="card-text">Secure your PDF with password protection.</p>
+                <a href="{% url 'pdf_processor:protect_pdf' %}" class="btn btn-primary">Protect Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
