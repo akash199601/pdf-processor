@@ -12,7 +12,6 @@ from datetime import datetime
 def home(request):
     return render(request, 'pdf_processor/home.html')
 
-
 def merge_pdfs(request):
     if request.method == 'POST':
         try:
